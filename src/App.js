@@ -1,10 +1,11 @@
-import './App.css';
+import {useState} from 'react';
+import AddNewInsult from './components/AddNewInsult';
 import Insult from './components/Insult';
-
+import './App.css';
 
 function App() {
   const title = "Radom insult form Shakespear";
-  let shakespearinsults=[
+  let [shakespearInsults, setShakespearInsults ] = useState([
     { insult:"Were such things here as we do speak about? Or have we eaten on the insane root That takes the reason prisoner?", play:"Macbeth"},
     { insult:"Never hung poison on a tread toad", play:"Richard III"},
     { insult:"He thinks too much: such men are dangerous. ", play:"Julius Ceasar"},
@@ -15,16 +16,24 @@ function App() {
     { insult:"Alas, poor heart, that kiss is comfortless As frozen water to a starved snake.", play:"Titus Andronicus"},
     { insult:"He hath eaten me out of house and home; he hath put all substance into that fat belly of his.", play:"Henry IV, Part 2"},
     { insult:"Out, you green-sickness carrion! Out, you baggage! You tallow-face! ", play:"Romeo and Juliet"},
-
-  ]
+  ])
   const randomInsult = () => {
-    const index = Math.floor(Math.random() * (shakespearinsults.length - 1));
-    return <Insult insult={shakespearinsults[index].insult} play={shakespearinsults[index].play} />
+    const index = Math.floor(Math.random() * (shakespearInsults.length - 1));
+    return <Insult insult={shakespearInsults[index].insult} play={shakespearInsults[index].play} />
   };
+
+  const updateInsults =(newinsult, newPlay)=>{
+    const newInsult = {
+      insult: newinsult,
+      play: newPlay,
+    }
+    setShakespearInsults([...shakespearInsults, newInsult]);
+  }
   return (
       <div className="App">
         <h1>{ title }</h1>
         <div>{ randomInsult() }</div>
+        <AddNewInsult updateInsults={updateInsults}/>
       </div>
     );
 }
