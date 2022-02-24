@@ -2,7 +2,10 @@ function Insult(props){
 
     const {insult, play}=props;
     return(
-        <p>{ insult } - { play }</p>
-    )
+        <article>
+            <p>{ insult } - { play }</p>
+        </article>
+
+    );
 }
 export default Insult;

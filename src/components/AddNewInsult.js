@@ -6,13 +6,13 @@ function AddNewInsult(props){
     function handleChangeInsult(event) {
         //console.log(event);
         insultText = event.target.value;
-        //console.log('Står i inputfält: ', inputText);
+
     }
 
     function handleChangePlay(event) {
         //console.log(event);
         playText = event.target.value;
-        //console.log('Står i inputfält: ', inputText);
+
     }
 
     function handleClick() {
@@ -22,13 +22,13 @@ function AddNewInsult(props){
 
     return(
         <div>
-        <div>
-            <input type="text" placeholder="Add new shakspear insult" id="insult"
-                onKeyUp={ handleChangeInsult }/>
-            <input type="text" placeholder="Add name of the play" id="play"
-                onKeyUp={ handleChangePlay }/>
-        </div>
-        <button onClick={ handleClick }>Add</button>
+            <div>
+                <input type="text" placeholder="Add new shakspear insult" id="insult"
+                    onKeyUp={ handleChangeInsult }/>
+                <input type="text" placeholder="Add name of the play" id="play"
+                    onKeyUp={ handleChangePlay }/>
+            </div>
+            <button onClick={ handleClick }>Add</button>
         </div>
     )
 }

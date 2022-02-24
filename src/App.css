@@ -1,3 +1,23 @@
+body{
+  background-color: azure;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+input{
+  margin: 10px;
+  padding: 5px;
+  width: 50%;
+}
+
+button{
+background-color: #61dafb;
+font-weight: bold;
+padding: 10px;
+border-radius: 5px;
+width: 100px;
+border: #61dafb;
+  box-shadow:2px 2px 5px rgb(205, 205, 205);
+}
+
 .App {
   text-align: center;
 }
